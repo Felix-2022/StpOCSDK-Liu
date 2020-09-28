@@ -1,0 +1,6 @@
+framework module StpOCSDK_Liu {
+  umbrella header "StpOCSDK-Liu-umbrella.h"
+
+  export *
+  module * { export * }
+}

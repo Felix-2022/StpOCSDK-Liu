@@ -1,8 +1,13 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '9.0'
 
-target 'StpOCSDK_Example' do
-  pod 'StpOCSDK', :path => '../'
+target 'StpOCSDK-Liu_Example' do
+  pod 'StpOCSDK-Liu', :path => '../'
 
+  target 'StpOCSDK-Liu_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end

@@ -1,0 +1,6 @@
+framework module Pods_StpOCSDK_Liu_Tests {
+  umbrella header "Pods-StpOCSDK-Liu_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
