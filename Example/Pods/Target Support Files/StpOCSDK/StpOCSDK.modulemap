@@ -1,0 +1,6 @@
+framework module StpOCSDK {
+  umbrella header "StpOCSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
