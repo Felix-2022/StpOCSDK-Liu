@@ -31,7 +31,7 @@
     [self.view addSubview:self.tableView];
     STPAccessConfiger.developEnv = Env_Development;//开发环境
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
-    [STPAccessConfiger setPackageId:@"aie.app" ];
+    [STPAccessConfiger setPackageId:@"stp.sdk" ];
     
     [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
