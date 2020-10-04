@@ -6,7 +6,7 @@ PODS:
   - AFNetworking/Reachability (4.0.1)
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
-  - StpOCSDK-Liu (0.0.2):
+  - StpOCSDK-Liu (0.0.3):
     - AFNetworking/NSURLSession (~> 4.0.1)
     - AFNetworking/Security (~> 4.0.1)
     - AFNetworking/Serialization (~> 4.0.1)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  StpOCSDK-Liu: 37d4e25151075777aeaae176c5c152455912da72
+  StpOCSDK-Liu: 3d28708af08329cd8dbacd4b55dabb8c789043ed
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: b91b3efb3f2997e3d5172625e8848a824700609f
