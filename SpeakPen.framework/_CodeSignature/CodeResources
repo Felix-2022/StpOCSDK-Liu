@@ -40,9 +40,13 @@
 		<data>
 		J65aeNu9BiMN4I9H7IPHOE55CiA=
 		</data>
+		<key>Headers/SpeakPen.h</key>
+		<data>
+		YGzPBbM3TmV5va/acX35mS6CX9c=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		NrJtb7g7PZWI7J6GShlm+POicg0=
+		57M4Q0gRvP25Lc/ez9Qlr4vKlX0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -148,6 +152,17 @@
 			<key>hash2</key>
 			<data>
 			yugh3VApmYdHkWo5nVGVFEdIOMo2bStH7glI15zNk7c=
+			</data>
+		</dict>
+		<key>Headers/SpeakPen.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YGzPBbM3TmV5va/acX35mS6CX9c=
+			</data>
+			<key>hash2</key>
+			<data>
+			Iov4coznHY4+6fhX3ouy/J4bZNSf2O61RU+R0WmoX1I=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
