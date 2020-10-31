@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param phoneNum 手机号码
  @param completionBlock IsRegist 1 = 注册  0=未注册
  */
-+ (void)isRegist:(NSString *_Nonnull)phoneNum completionBlock:(nullable void (^)(NSNumber* isRegist,NSError *error)) completionBlock;
++ (void)isRegist:(NSString *_Nonnull)phoneNum completionBlock:(nullable void (^)(NSNumber* isRegist,NSError *_Nullable error)) completionBlock;
 
 /**
  用户注册
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param code 验证码
  @param nickName 用户名称
  */
-+ (void)regist:(NSString *_Nonnull)phoneNum password:(NSString *_Nonnull)password code:(NSString *_Nonnull)code nickName:(NSString *_Nonnull)nickName  pushId:(NSString*)pushId  completionBlock:(nullable void (^)(STPUserModel *user,NSError *error)) completionBlock;
++ (void)regist:(NSString *_Nonnull)phoneNum password:(NSString *_Nonnull)password code:(NSString *_Nonnull)code nickName:(NSString *_Nonnull)nickName  pushId:(NSString*)pushId  completionBlock:(nullable void (^)(STPUserModel *user,NSError * _Nullable error)) completionBlock;
 
 /**
  发送验证码
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param type 验证码类型
  
  */
-+ (void)sendCode:(NSString *_Nonnull)phoneNum type:(STPSendCodeType )type completionBlock:(nullable void (^)(BOOL isSend,NSError *error)) completionBlock;
++ (void)sendCode:(NSString *_Nonnull)phoneNum type:(STPSendCodeType )type completionBlock:(nullable void (^)(BOOL isSend,NSError * _Nullable error)) completionBlock;
 
 #pragma mark ------------------- 用户登录 ------------------------
 /**
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param passWord 用户密码
  
  */
-+ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel *user,NSError *error)) completionBlock;
++ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel *user,NSError * _Nullable error)) completionBlock;
 
 /**
  第三方登录
@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param passwd 用户密码
  @param thirdCode 第三方code
  */
-+(void)loginEx:(NSString*)phone passwd:(NSString*)passwd thirdCode:(NSString*)thirdCode block:(void (^)(STPUserModel *user,NSError *error))block;
++(void)loginEx:(NSString*)phone passwd:(NSString*)passwd thirdCode:(NSString*)thirdCode block:(void (^)(STPUserModel * _Nullable user,NSError * _Nullable error))block;
 
 /**
  更改手机号码
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param code 验证码
  @param password 手机密码
  */
-+ (void)updatePhoneNum:(NSString *_Nonnull)phoneNum  code:(NSString *_Nonnull)code password:(NSString *_Nonnull)password completionBlock:(nullable void (^)(BOOL isSuccess,NSError *error)) completionBlock;
++ (void)updatePhoneNum:(NSString *_Nonnull)phoneNum  code:(NSString *_Nonnull)code password:(NSString *_Nonnull)password completionBlock:(nullable void (^)(BOOL isSuccess,NSError * _Nullable error)) completionBlock;
 
 /**
  修改密码
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param oldPsd 旧密码
  @param newPsd 新密码
  */
-+ (void)updatePassword:(NSString *_Nonnull)oldPsd newPsd:(NSString *_Nonnull)newPsd completionBlock:(nullable void (^)(BOOL isSuccess,NSError *error)) completionBlock;
++ (void)updatePassword:(NSString *_Nonnull)oldPsd newPsd:(NSString *_Nonnull)newPsd completionBlock:(nullable void (^)(BOOL isSuccess,NSError * _Nullable error)) completionBlock;
 
 /**
  忘记密码重置
@@ -91,20 +91,20 @@ NS_ASSUME_NONNULL_BEGIN
  @param code 手机验证码
  
  */
-+ (void)resetPassword:(NSString *_Nonnull)password phoneNum:(NSString*_Nonnull) phoneNum  code :(NSString *_Nonnull)code  completionBlock:(nullable void (^)(BOOL isSuccess,NSError *error)) completionBlock;
++ (void)resetPassword:(NSString *_Nonnull)password phoneNum:(NSString*_Nonnull) phoneNum  code :(NSString *_Nonnull)code  completionBlock:(nullable void (^)(BOOL isSuccess,NSError * _Nullable error)) completionBlock;
 
 
 /**
   登出
  */
-+ (void)logOut:(void (^)(BOOL isSuccess,NSError *error))  block;
++ (void)logOut:(void (^)(BOOL isSuccess,NSError * _Nullable error))  block;
 
 /**
    更新用户推送的token
  @param pushId 个推Cid
  @param completionBlock result
  */
-+ (void)updateUserPushToken:(NSString *_Nonnull)pushId completionBlock:(void (^)(BOOL  isSuccess,NSError *error)) completionBlock;
++ (void)updateUserPushToken:(NSString *_Nonnull)pushId completionBlock:(void (^)(BOOL  isSuccess,NSError * _Nullable error)) completionBlock;
 
 @end
 NS_ASSUME_NONNULL_END
