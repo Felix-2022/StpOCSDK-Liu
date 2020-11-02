@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StpOCSDK-Liu'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'StpOCSDK-Liu'
 
 # This description is used to generate tags and improve search results.
@@ -39,4 +39,6 @@ TODO: Add long description of the pod here.
  #依赖自己的或别人的Framework文件
   s.vendored_frameworks = 'SpeakPen.framework'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC'}
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
