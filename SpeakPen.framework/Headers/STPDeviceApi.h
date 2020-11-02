@@ -19,17 +19,17 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param currDetail 是否显示当前控制设备的详情  YES等于同时调用getDeviceDetail
  */
-+ (void)getDeviceList:(BOOL)currDetail block:(void(^)(NSArray <STPDeviceModel*>*device,NSError* _Nullable error))block;
++ (void)getDeviceList:(BOOL)currDetail block:(void(^)(NSArray <STPDeviceModel*>*  _Nullable device,NSError* _Nullable error))block;
 
 /**
  获取设备详细信息
  */
-+ (void)getDeviceDetail:(nonnull void (^)(STPDeviceModel *detail,NSError* _Nullable error))block;
++ (void)getDeviceDetail:(nonnull void (^)(STPDeviceModel * _Nullable detail,NSError* _Nullable error))block;
 
 /**
   获取设备硬件信息
  */
-+ (void)getHardwareInfo:(nonnull void(^)(STPHardwareModel *hardMode,NSError* _Nullable error))block;
++ (void)getHardwareInfo:(nonnull void(^)(STPHardwareModel * _Nullable hardMode,NSError* _Nullable error))block;
 
 /**
  修改设备的名称

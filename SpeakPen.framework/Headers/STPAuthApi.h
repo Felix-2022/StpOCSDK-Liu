@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param code 验证码
  @param nickName 用户名称
  */
-+ (void)regist:(NSString *_Nonnull)phoneNum password:(NSString *_Nonnull)password code:(NSString *_Nonnull)code nickName:(NSString *_Nonnull)nickName  pushId:(NSString*)pushId  completionBlock:(nullable void (^)(STPUserModel *user,NSError * _Nullable error)) completionBlock;
++ (void)regist:(NSString *_Nonnull)phoneNum password:(NSString *_Nonnull)password code:(NSString *_Nonnull)code nickName:(NSString *_Nonnull)nickName  pushId:(NSString*)pushId  completionBlock:(nullable void (^)(STPUserModel * _Nullable user,NSError * _Nullable error)) completionBlock;
 
 /**
  发送验证码
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param passWord 用户密码
  
  */
-+ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel *user,NSError * _Nullable error)) completionBlock;
++ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel * _Nullable user,NSError * _Nullable error)) completionBlock;
 
 /**
  第三方登录
