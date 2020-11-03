@@ -1,13 +1,7 @@
 
 #import "STPViewController.h"
 
-#import <SpeakPen/STPAuthApi.h>
-#import <SpeakPen/STPDeviceApi.h>
-#import <SpeakPen/STPAccessConfig.h>
-#import <SpeakPen/STPPictureBookApi.h>
-#import <SpeakPen/STPPicBookResourceModel.h>
-#import <SpeakPen/STPStudyReportApi.h>
-#import <SpeakPen/STPStudyReportModel.h>
+#import <SpeakPen/SpeakPen.h>
 #import <YYModel.h>
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
