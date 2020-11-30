@@ -4,6 +4,34 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/Pods_SpeakPen.framework/Info.plist</key>
+		<data>
+		UjNh9fzMpxCJsVVIy81+yl5SJuU=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/Pods_SpeakPen</key>
+		<data>
+		qsY92fZr00LCYTq0iDgM7T70PKk=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeDirectory</key>
+		<data>
+		0JgLGxI4QNYb++RyhFw+n230nXI=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements</key>
+		<data>
+		vTxucxVeXgap2u21kuLZqd4Tbr0=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements-1</key>
+		<data>
+		MvcH1xpve6F7RbuD+KOcssjabqI=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeResources</key>
+		<data>
+		DgWxrUJf258yZRRz63JFXxA6N/w=
+		</data>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeSignature</key>
+		<data>
+		vzfYPs/Kghl4co5r61S1ZitTacM=
+		</data>
 		<key>Headers/STPAccessConfig.h</key>
 		<data>
 		GQX+ggwgMHjyMlsOOHe93gKe5pA=
@@ -46,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eldqJrV7csGAjhL1zqz3fh8nR1Y=
+		meQ4yBLiVh200CPkG7FcIUju6Vc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,6 +83,83 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Pods_SpeakPen.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UjNh9fzMpxCJsVVIy81+yl5SJuU=
+			</data>
+			<key>hash2</key>
+			<data>
+			TCcIVyFdhPzaXliPVEpmBNFE9S9VXaEf7wJ5Kq00Om0=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/Pods_SpeakPen</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qsY92fZr00LCYTq0iDgM7T70PKk=
+			</data>
+			<key>hash2</key>
+			<data>
+			aHKPELZLzShc/Vkt067SlCuHO0WD4AR0GxrjGH+SRUE=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeDirectory</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0JgLGxI4QNYb++RyhFw+n230nXI=
+			</data>
+			<key>hash2</key>
+			<data>
+			R4oh7sABcmhaRwp1qHx2n89QkPHgqy9y+wF6plse8AQ=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vTxucxVeXgap2u21kuLZqd4Tbr0=
+			</data>
+			<key>hash2</key>
+			<data>
+			2ij0LlkCYoBgaQJbhBpffADNSD3koiLc7JeLbym4cOg=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements-1</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MvcH1xpve6F7RbuD+KOcssjabqI=
+			</data>
+			<key>hash2</key>
+			<data>
+			3nHTXQYQCc4Q0QrqAUvQj00nlwl91lulttuCJ1u5M5Q=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DgWxrUJf258yZRRz63JFXxA6N/w=
+			</data>
+			<key>hash2</key>
+			<data>
+			QAUkGxdI3XGTLwS+7oB9rEOx6kBsAqq4EZj3stfY4nw=
+			</data>
+		</dict>
+		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeSignature</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vzfYPs/Kghl4co5r61S1ZitTacM=
+			</data>
+			<key>hash2</key>
+			<data>
+			afiRbUKTEqr6cOA4YeECvo0E3vSUHUu8vquiTf2+MxA=
+			</data>
+		</dict>
 		<key>Headers/STPAccessConfig.h</key>
 		<dict>
 			<key>hash</key>

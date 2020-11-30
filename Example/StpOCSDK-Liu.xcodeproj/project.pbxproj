@@ -24,6 +24,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		88041CC92571097700F56672 /* SpeakPen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB279EA2521BC7A00715D19 /* SpeakPen.framework */; };
+		88041CCA2571097700F56672 /* SpeakPen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCB279EA2521BC7A00715D19 /* SpeakPen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,20 @@
 			remoteInfo = "StpOCSDK-Liu";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88041CCB2571097700F56672 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88041CCA2571097700F56672 /* SpeakPen.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		15A7F1E74BF7C21C90D062C2 /* Pods-StpOCSDK-Liu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StpOCSDK-Liu_Example.debug.xcconfig"; path = "Target Support Files/Pods-StpOCSDK-Liu_Example/Pods-StpOCSDK-Liu_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +94,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				88041CC92571097700F56672 /* SpeakPen.framework in Frameworks */,
 				47AF86E22B69172DE75EFD67 /* Pods_StpOCSDK_Liu_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +227,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				504AF1CCC20FEE2ABBABC445 /* [CP] Embed Pods Frameworks */,
+				88041CCB2571097700F56672 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -514,6 +532,7 @@
 				GCC_PREFIX_HEADER = "StpOCSDK-Liu/StpOCSDK-Liu-Prefix.pch";
 				INFOPLIST_FILE = "StpOCSDK-Liu/StpOCSDK-Liu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -538,6 +557,7 @@
 				GCC_PREFIX_HEADER = "StpOCSDK-Liu/StpOCSDK-Liu-Prefix.pch";
 				INFOPLIST_FILE = "StpOCSDK-Liu/StpOCSDK-Liu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
