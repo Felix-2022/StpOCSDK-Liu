@@ -100,7 +100,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)logOut:(void (^)(BOOL isSuccess,NSError * _Nullable error))  block;
 
 /**
-   更新用户推送的token
+ 设置个推ID,更新用户推送的token
  @param pushId 个推Cid
  @param completionBlock result
  */

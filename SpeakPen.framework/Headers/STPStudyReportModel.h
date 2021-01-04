@@ -8,25 +8,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// 学习成就数据
-@interface STPStudyAchieveModel : NSObject
+#pragma mark - FollowRead Model
 
-@property(nonatomic,strong) NSString *day;
-@property(nonatomic,strong) NSString *value;
+/// 跟读STPStudyReportModel
+@interface STPFollowReadMediaInfoModel : NSObject<NSCopying>
+
+@property(nonatomic,copy) NSString *book_id;
+@property(nonatomic,copy) NSString *oid;
+
+/// 跟读资源名称
+@property(nonatomic,copy) NSString *text;
+
+/// 跟读资源网络地址
+@property(nonatomic,copy) NSString *url;
+
+/// 跟读资源分数
+@property(nonatomic,copy) NSString *score;
 
 @end
 
-/// 学习成就数据列表
-@interface STPStudyAchieveList : NSObject
-
-@property(nonatomic,assign) NSInteger total; // 分类的总数量
-@property(nonatomic,strong) NSArray<STPStudyAchieveModel*> *lists; // 绘本列表
-
-@end
-
-#pragma mark 学习成就详情数据
-
-@interface STPStudyAchieveDetailExtraModel : NSObject
+@interface STPFollowReadExtraModel : NSObject<NSCopying>
 
 @property(nonatomic,assign) NSInteger bookCnt;
 @property(nonatomic,assign) NSInteger pointReadingCnt;
@@ -34,65 +35,89 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) NSInteger duration;
 @property(nonatomic,copy) NSArray *bookIds;
 
-@end
-
-@interface STPStudyAchieveDetailBookList : NSObject
-
-@property(nonatomic,assign) NSInteger rId; // id
-@property(nonatomic,assign) NSInteger playCnt;
-@property(nonatomic,strong) NSString *name;
-@property(nonatomic,strong) NSString *author;
-@property(nonatomic,strong) NSString *artist;
-@property(nonatomic,strong) NSString *lyricist;
-@property(nonatomic,strong) NSString *icon;
-@property(nonatomic,strong) NSString *image;
-@property(nonatomic,strong) NSString *desc;
-@property(nonatomic,strong) NSString *press;
-@property(nonatomic,strong) NSString *readGuideHtml;
-
-@end
-
-/// 学习成就数据详情
-@interface STPStudyAchieveDetail : NSObject
-
-@property(nonatomic,assign) NSInteger rId; // id
-@property(nonatomic,assign) NSInteger score; // 分数
-@property(nonatomic,strong) NSString *type;
-@property(nonatomic,strong) NSString *name;
-@property(nonatomic,strong) STPStudyAchieveDetailExtraModel *extraModel;
-@property(nonatomic,strong) NSArray<STPStudyAchieveDetailBookList*> *bookLists; // 图书列表
-
-@end
-
-#pragma mark 跟读评测统计数据
-
-/// 跟读图书详情
-@interface STPStudyFollowReadDataBookModel : NSObject
-
-@property(nonatomic,assign) NSInteger rId; // book_id
-@property(nonatomic,assign) NSInteger oid;
-@property(nonatomic,assign) NSInteger score;
-@property(nonatomic,strong) NSString *text;
-@property(nonatomic,strong) NSString *url;
-
-@end
-
-/// 跟读图书详情相关列表
-@interface STPStudyFollowReadDataExtraModel : NSObject
-
+// 跟读信息
 @property(nonatomic,assign) NSInteger cnt;
-@property(nonatomic,strong) NSArray<STPStudyFollowReadDataBookModel*> *bookLists;
+@property(nonatomic,copy) NSArray <STPFollowReadMediaInfoModel *>*list;
 
 @end
 
-/// 跟读数据
-@interface STPStudyFollowReadDataModel : NSObject
+/// 跟读图书数据
+@interface STPFollowReadBookModel : NSObject<NSCopying>
 
-@property(nonatomic,assign) NSInteger rId; // id
-@property(nonatomic,assign) NSInteger score; // 分数
-@property(nonatomic,strong) NSString *type;
-@property(nonatomic,strong) NSString *name;
-@property(nonatomic,strong) STPStudyFollowReadDataExtraModel *extraModel;
+@property(nonatomic,assign) NSInteger rID; //资源ID
+@property(nonatomic,copy) NSString *name;
+@property(nonatomic,copy) NSString *author;
+@property(nonatomic,copy) NSString *artist;
+@property(nonatomic,copy) NSString *lyricist;
+@property(nonatomic,copy) NSString *icon;
+@property(nonatomic,copy) NSString *image;
+@property(nonatomic,copy) NSString *desc;
+@property(nonatomic,copy) NSString *press;
+@property(nonatomic,copy) NSString *readGuideHtml;
+@property(nonatomic,assign) NSInteger playCnt;
+
+@end
+
+/// 学习报告数据
+@interface STPFollowReadReportModel : NSObject<NSCopying>
+
+@property(nonatomic,assign) NSInteger rID; //资源ID
+@property(nonatomic,copy) NSString *name;
+@property(nonatomic,assign) NSInteger score;
+@property(nonatomic,copy) NSString *type;
+@property(nonatomic,strong) STPFollowReadExtraModel *extra;
+@property(nonatomic,copy) NSArray <STPFollowReadBookModel *>*books;
+
+/// 获取没有重复数据的 资源列表
+- (NSArray <STPFollowReadBookModel *> *)getNoRepeatBooksList;
+
+@end
+
+/// 学习报告数据列表model
+@interface STPFollowReadResultModel : NSObject<NSCopying>
+
+/// 学习报告数据列表
+@property(nonatomic,copy) NSArray <STPFollowReadReportModel *>*data;
+
+/*
+ 以下数据是根据 学习报告数据列表data 计算得出，方便业务端直接使用。
+ */
+
+/// 累计点读书本数量
+@property(nonatomic, assign) NSInteger totalReadBookCount;
+
+/// 累计点读时长
+@property(nonatomic, assign) NSInteger totalDuration;
+
+/// 累计点读次数
+@property(nonatomic, assign) NSInteger totalPointReadingCount;
+
+/// 累计跟读次数
+@property(nonatomic, assign) NSInteger totalFollowReadingCount;
+
+/// 跟读数据列表
+@property(nonatomic,strong) NSMutableArray <STPFollowReadMediaInfoModel *>*totalMediaList;
+
+/// 阅读书籍列表
+@property(nonatomic,strong) NSMutableArray <STPFollowReadBookModel *>*totalBookList;
+
+
+@end
+
+#pragma mark - Trend Model 趋势历史数据
+
+@interface STPTrendDetailModel : NSObject
+
+@property(nonatomic,copy) NSString *day;
+@property(nonatomic, assign) NSInteger value; // 时长 Or 次数
+
+@end
+
+@interface STPTrendListModel : NSObject
+
+@property(nonatomic, assign) NSInteger total; // 累计数据 时长 Or 次数
+
+@property(nonatomic,copy) NSArray <STPTrendDetailModel *>*list;
 
 @end
 

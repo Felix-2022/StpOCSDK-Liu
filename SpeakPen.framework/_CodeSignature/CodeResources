@@ -4,45 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/Pods_SpeakPen.framework/Info.plist</key>
-		<data>
-		UjNh9fzMpxCJsVVIy81+yl5SJuU=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/Pods_SpeakPen</key>
-		<data>
-		qsY92fZr00LCYTq0iDgM7T70PKk=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeDirectory</key>
-		<data>
-		0JgLGxI4QNYb++RyhFw+n230nXI=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements</key>
-		<data>
-		vTxucxVeXgap2u21kuLZqd4Tbr0=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements-1</key>
-		<data>
-		MvcH1xpve6F7RbuD+KOcssjabqI=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeResources</key>
-		<data>
-		DgWxrUJf258yZRRz63JFXxA6N/w=
-		</data>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeSignature</key>
-		<data>
-		vzfYPs/Kghl4co5r61S1ZitTacM=
-		</data>
 		<key>Headers/STPAccessConfig.h</key>
 		<data>
 		GQX+ggwgMHjyMlsOOHe93gKe5pA=
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		Ikw3TuLMrowRqSPlI31PIUoOLhI=
+		RDVyfB2APYUWZMSaqhQ5lJIKlBU=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
-		ino24uJ/WApC3kb1YCvaduLk+Wk=
+		C3C+rkjNNOkRcZoUJE0FUC0HmdY=
 		</data>
 		<key>Headers/STPDeviceModel.h</key>
 		<data>
@@ -50,19 +22,19 @@
 		</data>
 		<key>Headers/STPPicBookResourceModel.h</key>
 		<data>
-		7D4l9lpg9+383sRfj4ngl37Me4Q=
+		1kc3Lctkz/i3pXzEv6UHZ7+3+PA=
 		</data>
 		<key>Headers/STPPictureBookApi.h</key>
 		<data>
-		6tkeHrKRToQe2zC2s0OlO5sbALQ=
+		v595RKn4hvGXjDrdzK4PNLiWJh4=
 		</data>
 		<key>Headers/STPStudyReportApi.h</key>
 		<data>
-		wi83RYsrCAOED57WabdBB0nVbLQ=
+		QnOI2umfgSv8kFRQ5l04i5+hbyo=
 		</data>
 		<key>Headers/STPStudyReportModel.h</key>
 		<data>
-		aGHvbHG0ZAjJ/ueesycHpU7JXGg=
+		TWKFfp7Z9ySOtZ18CtjrWj+JjXk=
 		</data>
 		<key>Headers/STPUserModel.h</key>
 		<data>
@@ -74,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		meQ4yBLiVh200CPkG7FcIUju6Vc=
+		SY1hLbC7TLqYOM7f9i5/R/czJhs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -83,83 +55,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/Pods_SpeakPen.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UjNh9fzMpxCJsVVIy81+yl5SJuU=
-			</data>
-			<key>hash2</key>
-			<data>
-			TCcIVyFdhPzaXliPVEpmBNFE9S9VXaEf7wJ5Kq00Om0=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/Pods_SpeakPen</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qsY92fZr00LCYTq0iDgM7T70PKk=
-			</data>
-			<key>hash2</key>
-			<data>
-			aHKPELZLzShc/Vkt067SlCuHO0WD4AR0GxrjGH+SRUE=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeDirectory</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0JgLGxI4QNYb++RyhFw+n230nXI=
-			</data>
-			<key>hash2</key>
-			<data>
-			R4oh7sABcmhaRwp1qHx2n89QkPHgqy9y+wF6plse8AQ=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vTxucxVeXgap2u21kuLZqd4Tbr0=
-			</data>
-			<key>hash2</key>
-			<data>
-			2ij0LlkCYoBgaQJbhBpffADNSD3koiLc7JeLbym4cOg=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeRequirements-1</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MvcH1xpve6F7RbuD+KOcssjabqI=
-			</data>
-			<key>hash2</key>
-			<data>
-			3nHTXQYQCc4Q0QrqAUvQj00nlwl91lulttuCJ1u5M5Q=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			DgWxrUJf258yZRRz63JFXxA6N/w=
-			</data>
-			<key>hash2</key>
-			<data>
-			QAUkGxdI3XGTLwS+7oB9rEOx6kBsAqq4EZj3stfY4nw=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_SpeakPen.framework/_CodeSignature/CodeSignature</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vzfYPs/Kghl4co5r61S1ZitTacM=
-			</data>
-			<key>hash2</key>
-			<data>
-			afiRbUKTEqr6cOA4YeECvo0E3vSUHUu8vquiTf2+MxA=
-			</data>
-		</dict>
 		<key>Headers/STPAccessConfig.h</key>
 		<dict>
 			<key>hash</key>
@@ -175,22 +70,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ikw3TuLMrowRqSPlI31PIUoOLhI=
+			RDVyfB2APYUWZMSaqhQ5lJIKlBU=
 			</data>
 			<key>hash2</key>
 			<data>
-			3wOqnq4XX+uKJZqiB/xkdb+SimiRIpzFD1xmypwD1Z8=
+			QIQu1uCSj02vnpbXdXbhJrzhq9hIKjeX+FXBzoFQ6eE=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ino24uJ/WApC3kb1YCvaduLk+Wk=
+			C3C+rkjNNOkRcZoUJE0FUC0HmdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			1zzR4RX9XWmEvc3Bf0q5tdxE5JZCVOP6jOgpv3Bi+Bk=
+			hrnvywWKXPB6+SdryidC6AjV1no3ZH528qczBfR1NQQ=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceModel.h</key>
@@ -208,44 +103,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7D4l9lpg9+383sRfj4ngl37Me4Q=
+			1kc3Lctkz/i3pXzEv6UHZ7+3+PA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uRwkFoDJWZDohh5Oj3kclm7CSX+ubZqiipDKZo4M7hQ=
+			sUPEdlrz4rDgQXiKK1bfwhI+2CN4zMvh3gG+onqa4U8=
 			</data>
 		</dict>
 		<key>Headers/STPPictureBookApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6tkeHrKRToQe2zC2s0OlO5sbALQ=
+			v595RKn4hvGXjDrdzK4PNLiWJh4=
 			</data>
 			<key>hash2</key>
 			<data>
-			l64E155YIPK0JuMP3cJs+qlaQxGXI07Ru0C7juLdUgg=
+			fTbYuYgnOEDQGXHcVSHuU7p+mWTmGG07iOyPdLsdfQg=
 			</data>
 		</dict>
 		<key>Headers/STPStudyReportApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wi83RYsrCAOED57WabdBB0nVbLQ=
+			QnOI2umfgSv8kFRQ5l04i5+hbyo=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZS5QbPPSSG4tZNtAQH2+b6Qrz9J4btHJ/B8xUKm1mec=
+			t0QlX0F+ggU2UGzjU40zxI7iAIcV5LeS+ykYs6D187s=
 			</data>
 		</dict>
 		<key>Headers/STPStudyReportModel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aGHvbHG0ZAjJ/ueesycHpU7JXGg=
+			TWKFfp7Z9ySOtZ18CtjrWj+JjXk=
 			</data>
 			<key>hash2</key>
 			<data>
-			d2R4SADy+HtlI+ZAETMXSTTikT9Vx/cvff7pFkhdxH4=
+			WVOR9nOeqPNgxXVbLLlbMj9VkKzj/+nKQ/DhLsiaLos=
 			</data>
 		</dict>
 		<key>Headers/STPUserModel.h</key>

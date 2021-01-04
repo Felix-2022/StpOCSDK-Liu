@@ -7,6 +7,7 @@
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) NSString * picbookId;
 @property (nonatomic, strong) NSArray * dataArray;
 @property (nonatomic, strong) UIAlertController *alertVc;
 @end
@@ -67,16 +68,19 @@
         @"获取绘本列表",
         @"搜索绘本列表",
         @"获取绘本详情",
-        @"上传绘本",
+        @"添加绘本",
         @"删除绘本",
         @"获取设备端绘本列表",
         @"获取设备端存储卡容量信息",
-        @"获取学习成就 （按照日期进行选择）",
-        @"获取学习成就 （按照数量进行选择）",
-        @"获取学习成就详情 （按照数量进行选择）",
-        @"获取跟读评测统计 （按照日期进行选择）",
-        @"获取跟读评测统计 （按照数量进行选择）",
-        @"手机号是否注册过"
+        @"获取当天跟读测评 （今天） ",
+        @"获取数量顺序跟读测评",
+        @"获取过去7天阅读详情 ",
+        @"获取数量顺序阅读详情",
+        @"获取过去7天的点读趋势详情",
+        @"获取过去7天的学习时长趋势详情",
+        @"手机号是否注册过",
+        @"获取已添加到设备上的点读包列表",
+        @" 获取全部可用的点读包列表"
     ];
 }
 
@@ -179,6 +183,10 @@
                 if (error) {
                     message = error.description;
                 } else {
+                    if (list.lists.count > 0) {
+                        STPPicBookResourceModel *model = [list.lists firstObject];
+                        self.picbookId = model.mid;
+                    }
                     message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
@@ -200,7 +208,11 @@
             break;
         case 7:
         {
-            [STPPictureBookApi getPicbookDetail:@"3562496" block:^(STPPicBookDetailModel * _Nullable detailModel, NSError * _Nullable error) {
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi getPicbookDetail:rID block:^(STPPicBookDetailModel * _Nullable detailModel, NSError * _Nullable error) {
                 NSLog(@"获取绘本详情:%@",error);
                 if (error) {
                     message = error.description;
@@ -213,8 +225,12 @@
             break;
         case 8:
         {
-            [STPPictureBookApi uploadPicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
-                NSLog(@"上传绘本:%d-------%@",isSuss,error);
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi addBookDownloadToDevice:rID block:^(BOOL isSuss, NSError * _Nullable error) {
+                NSLog(@"添加绘本:%d-------%@",isSuss,error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -226,7 +242,11 @@
             break;
         case 9:
         {
-            [STPPictureBookApi deletePicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi deleteDeviceBooks:self.dataArray block:^(BOOL isSuss, NSError * _Nullable error) {
                 NSLog(@"删除绘本:%d-------%@",isSuss,error);
                 if (error) {
                     message = error.description;
@@ -265,13 +285,14 @@
             break;
         case 12:
         {
-            
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-01-01" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就 （按照日期进行选择）:%@",error);
+            NSString *start = [self currentDateStr];
+            NSString *end = start;
+            [STPStudyReportApi getStudyAchieveData:@"follow-reading" startDate:start endDate:end block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取当天跟读测评 （今天）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -279,12 +300,12 @@
             break;
         case 13:
         {
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" fromId:0 count:7 block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就 （按照数量进行选择）:%@",error);
+            [STPStudyReportApi getStudyAchieveData:@"follow-reading" fromId:0 count:20 block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取数量顺序跟读测评:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -292,14 +313,15 @@
             break;
         case 14:
         {
-            
-            [STPStudyReportApi getStudyAchieveDetailData:@"duration" fromId:0 count:7 block:^(STPStudyAchieveDetail * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就详情 （按照数量进行选择）:%@",error);
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getTodayReadBookListStartDate:start endDate:end block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去7天阅读详情 :%@",error);
                 
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -307,12 +329,12 @@
             break;
         case 15:
         {
-            [STPStudyReportApi getFollowReadData:@"2020-03-24" endDate:@"2020-03-31" block:^(NSArray * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取跟读评测统计 （按照日期进行选择）:%@",error);
+            [STPStudyReportApi getTodayReadBookListFromId:0 count:20 block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取数量顺序阅读详情 :%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -320,19 +342,35 @@
             break;
         case 16:
         {
-            
-            [STPStudyReportApi getFollowReadData:0 count:7 block:^(NSArray * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取跟读评测统计 （按照数量进行选择）:%@",error);
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getPassdayTrendListWithType:@"point-reading" StartDate:start endDate:end andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去几天的点读详情:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
         }
             break;
-        case 17:{
+        case 17:
+        {
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getPassdayTrendListWithType:@"duration" StartDate:start endDate:end andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去几天的读书时长 （按照数量进行选择）:%@",error);
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [detailModel.list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 18:{
              [STPAuthApi isRegist:@"13511111111" completionBlock:^(NSNumber * _Nonnull isRegist, NSError * _Nonnull error) {
                  if ([isRegist isEqualToNumber:@(1)]) {
                       message =@"手机号码已注册";
@@ -341,6 +379,28 @@
                     }
                    [self showMessage:message];
                 }];
+        }
+            break;
+        case 19:{
+            [STPPictureBookApi getLocalPackageList:0 count:20 block:^(STPPicBookDetailList * _Nullable list, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 20:{
+            [STPPictureBookApi getAllPackageListResourceId:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
         }
             break;
         default:
@@ -360,4 +420,52 @@
     [self presentViewController:self.alertVc animated:YES completion:nil];
 }
 
+- (NSString *)currentDateStr{
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
+}
+
+- (NSString *)passTimeDateStr:(NSInteger)dayCount {
+    if (dayCount > 0) {
+        NSDate *nowDate = [NSDate date];
+        NSDate *theDate;
+        NSTimeInterval oneDay = 24*60*60*1;  //1天的长度
+        theDate = [nowDate initWithTimeIntervalSinceNow: -oneDay*dayCount];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        //设定时间格式,这里可以设置成自己需要的格式
+        // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+        [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+        NSString *dateString = [dateFormatter stringFromDate:theDate];
+        return dateString;
+    }
+    return [self currentDateStr];
+}
+
+- (NSString *)passMMDDDateStr:(NSInteger)dayCount {
+    if (dayCount > 0) {
+        NSDate *nowDate = [NSDate date];
+        NSDate *theDate;
+        NSTimeInterval oneDay = 24*60*60*1;  //1天的长度
+        theDate = [nowDate initWithTimeIntervalSinceNow: -oneDay*dayCount];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        //设定时间格式,这里可以设置成自己需要的格式
+        // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+        [dateFormatter setDateFormat:@"MM/dd"];
+        NSString *dateString = [dateFormatter stringFromDate:theDate];
+        return dateString;
+    }
+    
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
+}
 @end

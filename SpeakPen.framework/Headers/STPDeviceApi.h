@@ -52,7 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)changeDeviceVolume:(NSInteger )voiceValue block:(void (^)(BOOL isSuccess,NSError* _Nullable error)) block;
 
  
-
+/// 上传日志 (保持当前连接设备联网)
+/// @param block block
++ (void)uploadLogToDeviceBlock:(nullable void (^)(BOOL isSuss,NSError* _Nullable error))block;
 
 @end
 NS_ASSUME_NONNULL_END
